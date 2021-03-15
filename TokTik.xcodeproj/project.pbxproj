@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */; };
 		7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */; };
 		7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */; };
+		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 		7B56AA7E25FF22120041DE7F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */,
 				7B56AA6E25FDDA780041DE7F /* Assets.xcassets */,
 				7B56AA6525FDDA780041DE7F /* AppDelegate.swift */,
 				7B56AA6725FDDA780041DE7F /* SceneDelegate.swift */,
@@ -210,7 +213,6 @@
 				1737BD9A59B6CFC3A8C6CAA3 /* Pods-TokTik.debug.xcconfig */,
 				0862250534222F6B8AB700E1 /* Pods-TokTik.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -225,6 +227,8 @@
 				7B56AA5E25FDDA780041DE7F /* Sources */,
 				7B56AA5F25FDDA780041DE7F /* Frameworks */,
 				7B56AA6025FDDA780041DE7F /* Resources */,
+				9B34E78309B913F29B15C9E3 /* [CP] Embed Pods Frameworks */,
+				7BF0568425FF4062003C60F6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -274,12 +278,30 @@
 			files = (
 				7B56AA7225FDDA780041DE7F /* LaunchScreen.storyboard in Resources */,
 				7B56AA6F25FDDA780041DE7F /* Assets.xcassets in Resources */,
+				7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7BF0568425FF4062003C60F6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		8958CBDD536C547DE0AC690F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +322,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B34E78309B913F29B15C9E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokTik/Pods-TokTik-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokTik/Pods-TokTik-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TokTik/Pods-TokTik-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
