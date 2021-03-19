@@ -26,6 +26,7 @@
 		7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */; };
 		7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */; };
 		7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */; };
+		7B90C0382604613A00241364 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C0372604613A00241364 /* Extensions.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		7B90C0372604613A00241364 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				7B56AA6E25FDDA780041DE7F /* Assets.xcassets */,
 				7B56AA6525FDDA780041DE7F /* AppDelegate.swift */,
 				7B56AA6725FDDA780041DE7F /* SceneDelegate.swift */,
+				7B90C0372604613A00241364 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
+				7B90C0382604613A00241364 /* Extensions.swift in Sources */,
 				7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */,
 				7B56AA8825FF23730041DE7F /* ExploreViewController.swift in Sources */,
 				7B56AA9525FF23F80041DE7F /* UserListViewController.swift in Sources */,
