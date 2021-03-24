@@ -71,8 +71,9 @@ class HomeViewController: UIViewController {
         guard let model = followingPosts.first else {
             return
         }
-        
-        followingPageViewController.setViewControllers([PostViewController(model: model)], direction: .forward, animated: false, completion: nil)
+        let vc = PostViewController(model: model)
+        vc.delegate = self
+        followingPageViewController.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
         followingPageViewController.dataSource = self
         
         horizontalScrollView.addSubview(followingPageViewController.view)
@@ -85,8 +86,9 @@ class HomeViewController: UIViewController {
         guard let model = forYouPosts.first else {
             return
         }
-        
-        forYouPageViewController.setViewControllers([PostViewController(model: model)], direction: .forward, animated: false, completion: nil)
+        let vc = PostViewController(model: model)
+        vc.delegate = self
+        forYouPageViewController.setViewControllers([vc], direction: .forward, animated: false, completion: nil)
         forYouPageViewController.dataSource = self
         
         horizontalScrollView.addSubview(forYouPageViewController.view)
@@ -114,6 +116,7 @@ extension HomeViewController: UIPageViewControllerDataSource {
         let priorIndex = index - 1
         let model = currentPosts[priorIndex]
         let vc = PostViewController(model: model)
+        vc.delegate = self
         return vc
     }
     
@@ -134,6 +137,7 @@ extension HomeViewController: UIPageViewControllerDataSource {
         let nextIndex = index + 1
         let model = currentPosts[nextIndex]
         let vc = PostViewController(model: model)
+        vc.delegate = self
         return vc
     }
     
@@ -155,5 +159,28 @@ extension HomeViewController: UIScrollViewDelegate {
         else if scrollView.contentOffset.x > (view.width/2) {
             control.selectedSegmentIndex = 1
         }
+    }
+}
+
+extension HomeViewController: PostViewControllerDelegate {
+    func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel) {
+        horizontalScrollView.isScrollEnabled = false
+        if horizontalScrollView.contentOffset.x == 0 {
+            // Following page
+            followingPageViewController.dataSource = nil
+        }
+        else {
+            // For you page
+            forYouPageViewController.dataSource = nil
+        }
+        let vc = CommentsViewController(post: post)
+        addChild(vc)
+        vc.didMove(toParent: self)
+        view.addSubview(vc.view)
+        let frame: CGRect = CGRect(x: 0, y: view.height, width: view.width, height: view.height * 0.75)
+        vc.view.frame = frame
+        UIView.animate(withDuration: 0.2, animations: {
+            vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
+        })
     }
 }

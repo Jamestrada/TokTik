@@ -28,6 +28,7 @@
 		7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */; };
 		7B90C0382604613A00241364 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C0372604613A00241364 /* Extensions.swift */; };
 		7B90C03B2605AD6B00241364 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C03A2605AD6B00241364 /* PostModel.swift */; };
+		7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C03D260AF58A00241364 /* CommentsViewController.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		7B90C0372604613A00241364 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7B90C03A2605AD6B00241364 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		7B90C03D260AF58A00241364 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -191,6 +193,7 @@
 				7B56AA9A25FF241F0041DE7F /* SignUpViewController.swift */,
 				7B56AA9D25FF242D0041DE7F /* SettingsViewController.swift */,
 				7B56AAA525FF24BA0041DE7F /* PostViewController.swift */,
+				7B90C03D260AF58A00241364 /* CommentsViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				7B56AA9E25FF242D0041DE7F /* SettingsViewController.swift in Sources */,
 				7B56AAA625FF24BA0041DE7F /* PostViewController.swift in Sources */,
 				7B56AA8C25FF23B40041DE7F /* CameraViewController.swift in Sources */,
+				7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */,
 				7B56AAA125FF245F0041DE7F /* TabBarViewController.swift in Sources */,
 				7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */,
 				7B56AA9B25FF241F0041DE7F /* SignUpViewController.swift in Sources */,
