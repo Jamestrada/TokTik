@@ -174,6 +174,7 @@ extension HomeViewController: PostViewControllerDelegate {
             forYouPageViewController.dataSource = nil
         }
         let vc = CommentsViewController(post: post)
+        vc.delegate = self
         addChild(vc)
         vc.didMove(toParent: self)
         view.addSubview(vc.view)
@@ -181,6 +182,28 @@ extension HomeViewController: PostViewControllerDelegate {
         vc.view.frame = frame
         UIView.animate(withDuration: 0.2, animations: {
             vc.view.frame = CGRect(x: 0, y: self.view.height - frame.height, width: frame.width, height: frame.height)
+        })
+    }
+}
+
+extension HomeViewController: CommentsViewControllerDelegate {
+    func didTapCloseForComments(with viewController: CommentsViewController) {
+        // Close comments with animation
+        let frame = viewController.view.frame
+        UIView.animate(withDuration: 0.2, animations: {
+            viewController.view.frame = CGRect(x: 0, y: self.view.height, width: frame.width, height: frame.height)
+        }, completion: { [weak self] done in
+            if done {
+                DispatchQueue.main.async {
+                    // Remove comment vc as child
+                    viewController.view.removeFromSuperview()
+                    viewController.removeFromParent()
+                    // Allow horizontal and vertical scroll
+                    self?.horizontalScrollView.isScrollEnabled = true
+                    self?.forYouPageViewController.dataSource = self
+                    self?.followingPageViewController.dataSource = self
+                }
+            }
         })
     }
 }
