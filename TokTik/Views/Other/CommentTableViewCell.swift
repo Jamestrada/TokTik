@@ -1,0 +1,72 @@
+//
+//  CommentTableViewCell.swift
+//  TokTik
+//
+//  Created by James Estrada on 3/26/21.
+//
+
+import UIKit
+
+class CommentTableViewCell: UITableViewCell {
+    static let identifier = "CommentTableViewCell"
+    
+    private let avatarImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    private let commentLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .label
+        return label
+    }()
+    
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = .secondaryLabel
+        return label
+    }()
+    
+    // MARK: - Init
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        clipsToBounds = true
+        contentView.addSubview(avatarImageView)
+        contentView.addSubview(commentLabel)
+        contentView.addSubview(dateLabel)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        commentLabel.sizeToFit()
+        dateLabel.sizeToFit()
+        
+        // Assign frames
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dateLabel.text = nil
+        commentLabel.text = nil
+        avatarImageView.image = nil
+    }
+    
+    public func configure(with model: PostComment) {
+        commentLabel.text = model.text
+        if let url = model.user.profilePictureURL {
+            print(url)
+        }
+        else {
+            avatarImageView.image = UIImage(systemName: "person.circle")
+        }
+    }
+}

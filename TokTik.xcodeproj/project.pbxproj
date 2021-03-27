@@ -31,6 +31,7 @@
 		7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C03D260AF58A00241364 /* CommentsViewController.swift */; };
 		7B90C041260D90DC00241364 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C040260D90DC00241364 /* PostComment.swift */; };
 		7B90C044260D911200241364 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C043260D911200241364 /* User.swift */; };
+		7B90C047260ECB7C00241364 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		7B90C03D260AF58A00241364 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		7B90C040260D90DC00241364 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		7B90C043260D911200241364 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 		7B56AAA425FF248D0041DE7F /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
 				7B90C0382604613A00241364 /* Extensions.swift in Sources */,
 				7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */,
+				7B90C047260ECB7C00241364 /* CommentTableViewCell.swift in Sources */,
 				7B56AA8825FF23730041DE7F /* ExploreViewController.swift in Sources */,
 				7B56AA9525FF23F80041DE7F /* UserListViewController.swift in Sources */,
 				7B56AA9E25FF242D0041DE7F /* SettingsViewController.swift in Sources */,
