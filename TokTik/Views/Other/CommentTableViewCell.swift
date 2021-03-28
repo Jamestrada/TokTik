@@ -51,6 +51,12 @@ class CommentTableViewCell: UITableViewCell {
         dateLabel.sizeToFit()
         
         // Assign frames
+        let imageSize: CGFloat = 44
+        avatarImageView.frame = CGRect(x: 10, y: 5, width: imageSize, height: imageSize)
+        
+        let commentLabelHeight = min(contentView.height - dateLabel.top, commentLabel.height)
+        commentLabel.frame = CGRect(x: avatarImageView.right + 10, y: 5, width: contentView.width - avatarImageView.right - 10, height: commentLabelHeight)
+        dateLabel.frame = CGRect(x: avatarImageView.right + 10, y: commentLabel.bottom, width: dateLabel.width, height: dateLabel.height)
     }
     
     override func prepareForReuse() {
@@ -62,6 +68,7 @@ class CommentTableViewCell: UITableViewCell {
     
     public func configure(with model: PostComment) {
         commentLabel.text = model.text
+        dateLabel.text = .date(with: model.date)
         if let url = model.user.profilePictureURL {
             print(url)
         }
