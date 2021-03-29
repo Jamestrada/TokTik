@@ -41,6 +41,15 @@ class PostViewController: UIViewController {
         return button
     }()
     
+    private let profileButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(named: "test"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        button.tintColor = .white
+        button.layer.masksToBounds = true
+        return button
+    }()
+    
     private let captionLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -71,6 +80,7 @@ class PostViewController: UIViewController {
         setUpButtons()
         setUpDoubleTapToLike()
         view.addSubview(captionLabel)
+        view.addSubview(profileButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +98,9 @@ class PostViewController: UIViewController {
                                     y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0),
                                     width: view.width - size - 12,
                                     height: labelSize.height)
+        
+        profileButton.frame = CGRect(x: likeButton.left, y: likeButton.top - 10 - size, width: size, height: size)
+        profileButton.layer.cornerRadius = size / 2
     }
     
     func setUpButtons() {
