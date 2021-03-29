@@ -9,6 +9,7 @@ import UIKit
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
+    func postViewController(_ vc: PostViewController, didTapProfileButtonFor post: PostModel)
 }
 
 class PostViewController: UIViewController {
@@ -81,6 +82,7 @@ class PostViewController: UIViewController {
         setUpDoubleTapToLike()
         view.addSubview(captionLabel)
         view.addSubview(profileButton)
+        profileButton.addTarget(self, action: #selector(didTapProfileButton), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -101,6 +103,10 @@ class PostViewController: UIViewController {
         
         profileButton.frame = CGRect(x: likeButton.left, y: likeButton.top - 10 - size, width: size, height: size)
         profileButton.layer.cornerRadius = size / 2
+    }
+    
+    @objc func didTapProfileButton() {
+        delegate?.postViewController(self, didTapProfileButtonFor: model)
     }
     
     func setUpButtons() {
