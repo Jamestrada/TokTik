@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol PostViewControllerDelegate: AnyObject {
     func postViewController(_ vc: PostViewController, didTapCommentButtonFor post: PostModel)
@@ -61,6 +62,10 @@ class PostViewController: UIViewController {
         return label
     }()
     
+    var player: AVPlayer?
+    
+    private var playerDidFinishObserver: NSObjectProtocol?
+    
     // MARK: - Init
     
     init(model: PostModel) {
@@ -74,6 +79,7 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureVideo()
 
         let colors: [UIColor] = [.red, .green, .black, .orange, .blue, .systemPink]
         view.backgroundColor = colors.randomElement()
@@ -89,7 +95,8 @@ class PostViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         let size: CGFloat = 40
-        let yStart: CGFloat = view.height - (size * 4) - 30 - view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
+        let tabBarHeight: CGFloat = (tabBarController?.tabBar.height ?? 0)
+        let yStart: CGFloat = view.height - (size * 4.0) - 30 - view.safeAreaInsets.bottom - tabBarHeight
         for (index, button) in [likeButton, commentButton, shareButton].enumerated() {
             button.frame = CGRect(x: view.width - size - 10, y: yStart + (CGFloat(index) * 10) + (CGFloat(index) * size), width: size, height: size)
         }
@@ -103,6 +110,32 @@ class PostViewController: UIViewController {
         
         profileButton.frame = CGRect(x: likeButton.left, y: likeButton.top - 10 - size, width: size, height: size)
         profileButton.layer.cornerRadius = size / 2
+    }
+    
+    private func configureVideo() {
+        guard let path = Bundle.main.path(forResource: "videoSample", ofType: "mp4") else {
+            return
+        }
+        let url = URL(fileURLWithPath: path)
+        player = AVPlayer(url: url)
+        
+        // Add it as a subview to our posts
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = view.bounds
+        playerLayer.videoGravity = .resizeAspectFill // video takes entirety of frame
+        view.layer.addSublayer(playerLayer)
+        
+        player?.volume = 0
+        player?.play()
+        
+        // Loop video after it ends
+        guard let player = player else {
+            return
+        }
+        playerDidFinishObserver = NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main, using: { _ in
+            player.seek(to: .zero)
+            player.play()
+        })
     }
     
     @objc func didTapProfileButton() {
