@@ -21,7 +21,6 @@ class TabBarViewController: UITabBarController {
         let notifications = NotificationsViewController()
         let profile = ProfileViewController(user: User(username: "self", profilePictureURL: nil, identifier: "abc123"))
         
-        explore.title = "Explore"
         notifications.title = "Notifications"
         profile.title = "Profile"
         
