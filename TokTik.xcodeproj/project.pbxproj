@@ -42,6 +42,10 @@
 		7B92AA672615932300018F8C /* ExploreUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA662615932300018F8C /* ExploreUserViewModel.swift */; };
 		7B92AA6A26181AA700018F8C /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B92AA6926181AA700018F8C /* explore.json */; };
 		7B92AA6D26181B9600018F8C /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA6C26181B9600018F8C /* ExploreManager.swift */; };
+		7B92AA70261942D100018F8C /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA6F261942D100018F8C /* ExploreBannerCollectionViewCell.swift */; };
+		7B92AA73261942E500018F8C /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */; };
+		7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */; };
+		7B92AA792619430F00018F8C /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +90,10 @@
 		7B92AA662615932300018F8C /* ExploreUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserViewModel.swift; sourceTree = "<group>"; };
 		7B92AA6926181AA700018F8C /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explore.json; sourceTree = "<group>"; };
 		7B92AA6C26181B9600018F8C /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
+		7B92AA6F261942D100018F8C /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -248,6 +256,10 @@
 			isa = PBXGroup;
 			children = (
 				7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */,
+				7B92AA6F261942D100018F8C /* ExploreBannerCollectionViewCell.swift */,
+				7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */,
+				7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */,
+				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -396,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
+				7B92AA792619430F00018F8C /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				7B90C0382604613A00241364 /* Extensions.swift in Sources */,
 				7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */,
 				7B92AA5526156FD900018F8C /* ExploreSection.swift in Sources */,
@@ -406,6 +419,7 @@
 				7B92AA64261592F900018F8C /* ExploreHashtagViewModel.swift in Sources */,
 				7B56AA9E25FF242D0041DE7F /* SettingsViewController.swift in Sources */,
 				7B56AAA625FF24BA0041DE7F /* PostViewController.swift in Sources */,
+				7B92AA73261942E500018F8C /* ExplorePostCollectionViewCell.swift in Sources */,
 				7B56AA8C25FF23B40041DE7F /* CameraViewController.swift in Sources */,
 				7B92AA61261592CD00018F8C /* ExplorePostViewModel.swift in Sources */,
 				7B92AA582615701000018F8C /* ExploreCell.swift in Sources */,
@@ -415,6 +429,7 @@
 				7B56AAA125FF245F0041DE7F /* TabBarViewController.swift in Sources */,
 				7B90C044260D911200241364 /* User.swift in Sources */,
 				7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */,
+				7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */,
 				7B56AA9B25FF241F0041DE7F /* SignUpViewController.swift in Sources */,
 				7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */,
 				7B56AA8F25FF23C60041DE7F /* NotificationsViewController.swift in Sources */,
@@ -423,6 +438,7 @@
 				7B90C03B2605AD6B00241364 /* PostModel.swift in Sources */,
 				7B56AA9225FF23DC0041DE7F /* ProfileViewController.swift in Sources */,
 				7B56AAAD25FF252A0041DE7F /* StorageManager.swift in Sources */,
+				7B92AA70261942D100018F8C /* ExploreBannerCollectionViewCell.swift in Sources */,
 				7B56AA6625FDDA780041DE7F /* AppDelegate.swift in Sources */,
 				7B56AA6825FDDA780041DE7F /* SceneDelegate.swift in Sources */,
 				7B92AA5B2615708600018F8C /* ExploreSectionType.swift in Sources */,
