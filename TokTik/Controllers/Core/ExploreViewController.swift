@@ -51,19 +51,13 @@ class ExploreViewController: UIViewController {
             )
         )
         
-        var posts = [ExploreCell]()
-        for _ in 0...40 {
-            posts.append(
-                .post(viewModel: ExplorePostViewModel(thumbnailImage: UIImage(named: "test"), caption: "This was a really cool post and a long caption", handler: {
-                    
-                }))
-            )
-        }
         // Trending posts
         sections.append(
             ExploreSection(
                 type: .trendingPosts,
-                cells: posts
+                cells: ExploreManager.shared.getExploreTrendingPosts().compactMap({
+                    return ExploreCell.post(viewModel: $0)
+                })
             )
         )
         
@@ -71,23 +65,9 @@ class ExploreViewController: UIViewController {
         sections.append(
             ExploreSection(
                 type: .users,
-                cells: [
-                    .user(viewModel: ExploreUserViewModel(profilePictureURL: nil, username: "james", followerCount: 0, handler: {
-                        
-                    })),
-                    .user(viewModel: ExploreUserViewModel(profilePictureURL: nil, username: "praveen", followerCount: 0, handler: {
-                        
-                    })),
-                    .user(viewModel: ExploreUserViewModel(profilePictureURL: nil, username: "keagan", followerCount: 0, handler: {
-                        
-                    })),
-                    .user(viewModel: ExploreUserViewModel(profilePictureURL: nil, username: "andre", followerCount: 0, handler: {
-                        
-                    })),
-                    .user(viewModel: ExploreUserViewModel(profilePictureURL: nil, username: "hector", followerCount: 0, handler: {
-                        
-                    }))
-                ]
+                cells: ExploreManager.shared.getExploreCreators().compactMap({
+                    return ExploreCell.user(viewModel: $0)
+                })
             )
         )
         
@@ -95,28 +75,9 @@ class ExploreViewController: UIViewController {
         sections.append(
             ExploreSection(
                 type: .trendingHashtags,
-                cells: [
-                    .hashtag(viewModel: ExploreHashtagViewModel(text: "#foryou", icon: UIImage(systemName: "house"), count: 1, handler: {
-                        
-                    })),
-                    .hashtag(viewModel: ExploreHashtagViewModel(text: "#iphone12", icon: UIImage(systemName: "airplane"), count: 1, handler: {
-                        
-                    })),
-                    .hashtag(viewModel: ExploreHashtagViewModel(text: "#toktik", icon: UIImage(systemName: "camera"), count: 1, handler: {
-                        
-                    })),
-                    .hashtag(viewModel: ExploreHashtagViewModel(text: "#m1macbook", icon: UIImage(systemName: "bell"), count: 1, handler: {
-                        
-                    }))
-                ]
-            )
-        )
-        
-        // Recommended
-        sections.append(
-            ExploreSection(
-                type: .recommended,
-                cells: posts
+                cells: ExploreManager.shared.getExploreHashtags().compactMap({
+                    return ExploreCell.hashtag(viewModel: $0)
+                })
             )
         )
         
@@ -124,7 +85,9 @@ class ExploreViewController: UIViewController {
         sections.append(
             ExploreSection(
                 type: .popular,
-                cells: posts
+                cells: ExploreManager.shared.getExplorePopularPosts().compactMap({
+                    return ExploreCell.post(viewModel: $0)
+                })
             )
         )
         
@@ -132,7 +95,9 @@ class ExploreViewController: UIViewController {
         sections.append(
             ExploreSection(
                 type: .new,
-                cells: posts
+                cells: ExploreManager.shared.getExploreRecentPosts().compactMap({
+                    return ExploreCell.post(viewModel: $0)
+                })
             )
         )
     }
