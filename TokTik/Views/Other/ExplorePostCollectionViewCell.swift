@@ -12,7 +12,7 @@ class ExplorePostCollectionViewCell: UICollectionViewCell {
     
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill // fill image and keep aspect ratio
         imageView.clipsToBounds = true
         return imageView
     }()
