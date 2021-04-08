@@ -235,8 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				7B56AA9425FF23F80041DE7F /* UserListViewController.swift */,
-				7B56AA9725FF240E0041DE7F /* SignInViewController.swift */,
-				7B56AA9A25FF241F0041DE7F /* SignUpViewController.swift */,
+				7B92AA7B261EB8DE00018F8C /* Authentication */,
 				7B56AA9D25FF242D0041DE7F /* SettingsViewController.swift */,
 				7B56AAA525FF24BA0041DE7F /* PostViewController.swift */,
 				7B90C03D260AF58A00241364 /* CommentsViewController.swift */,
@@ -262,6 +261,15 @@
 				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		7B92AA7B261EB8DE00018F8C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				7B56AA9725FF240E0041DE7F /* SignInViewController.swift */,
+				7B56AA9A25FF241F0041DE7F /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		A2B4096C76E47EFB3E7FCF0A /* Pods */ = {
