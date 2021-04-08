@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         view.addSubview(horizontalScrollView)
         // Paging controller
         setUpFeed()
+        horizontalScrollView.contentInsetAdjustmentBehavior = .never // removes empty inset at start. video takes whole screen now
         horizontalScrollView.delegate = self
         horizontalScrollView.contentOffset = CGPoint(x: view.width, y: 0)
         setUpHeaderButtons()
