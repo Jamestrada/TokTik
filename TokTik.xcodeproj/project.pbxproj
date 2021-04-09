@@ -46,6 +46,8 @@
 		7B92AA73261942E500018F8C /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */; };
 		7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */; };
 		7B92AA792619430F00018F8C /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */; };
+		7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA7D261FF9C300018F8C /* AuthField.swift */; };
+		7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA80261FF9E100018F8C /* AuthButton.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
 		7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B92AA7D261FF9C300018F8C /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
+		7B92AA80261FF9E100018F8C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -259,6 +263,8 @@
 				7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */,
 				7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */,
 				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
+				7B92AA7D261FF9C300018F8C /* AuthField.swift */,
+				7B92AA80261FF9E100018F8C /* AuthButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -415,6 +421,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */,
+				7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */,
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
 				7B92AA792619430F00018F8C /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				7B90C0382604613A00241364 /* Extensions.swift in Sources */,
