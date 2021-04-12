@@ -107,12 +107,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        AuthManager.shared.signIn(with: email, password: password) { loggedIn in
-            if loggedIn {
-                // Dismiss sign in
-            }
-            else {
-                // Show error
+        AuthManager.shared.signIn(with: email, password: password) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let email):
+                    print(email)
+                    // success
+                break
+                case .failure(let error):
+                    print(error)
+                    let alert = UIAlertController(title: "Sign In Failed", message: "Please check your email and password to try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true)
+                    self?.passwordField.text = nil
+                }
             }
         }
     }

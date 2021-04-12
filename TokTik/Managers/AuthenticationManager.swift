@@ -49,7 +49,15 @@ final class AuthManager {
     }
     
     public func signUp(with username: String, emailAddress: String, password: String, completion: @escaping (Bool) -> Void) {
+        // Make sure entered username is available
         
+        Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
+            guard result != nil, error == nil else {
+                completion(false)
+                return
+            }
+            DatabaseManager.shared.insertUser(with: emailAddress, username: username, completion: completion)
+        }
     }
     
     public func signOut(completion: (Bool) -> Void) {
