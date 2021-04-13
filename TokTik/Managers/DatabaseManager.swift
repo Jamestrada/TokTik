@@ -59,13 +59,6 @@ final class DatabaseManager {
             })
             
         }
-        database.child(username).setValue(["email": email]) { error, _ in
-            guard error == nil else {
-                completion(false)
-                return
-            }
-            completion(true)
-        }
     }
     
     public func getAllUsers(completion: ([String]) -> Void) {

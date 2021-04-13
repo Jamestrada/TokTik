@@ -120,7 +120,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         AuthManager.shared.signUp(with: username, emailAddress: email, password: password) { [weak self] success in
             DispatchQueue.main.async {
                 if success {
-                    print("signed up")
+                    self?.dismiss(animated: true, completion: nil)
                 }
                 else {
                     let alert = UIAlertController(
