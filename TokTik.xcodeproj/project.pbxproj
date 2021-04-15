@@ -26,6 +26,8 @@
 		7B56AAB025FF25440041DE7F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */; };
 		7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */; };
 		7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */; };
+		7B89326D2627EFBC00A25CD9 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89326C2627EFBC00A25CD9 /* RecordButton.swift */; };
+		7B8932702627F60400A25CD9 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89326F2627F60400A25CD9 /* CaptionViewController.swift */; };
 		7B90C0382604613A00241364 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C0372604613A00241364 /* Extensions.swift */; };
 		7B90C03B2605AD6B00241364 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C03A2605AD6B00241364 /* PostModel.swift */; };
 		7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C03D260AF58A00241364 /* CommentsViewController.swift */; };
@@ -76,6 +78,8 @@
 		7B56AAAF25FF25440041DE7F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		7B89326C2627EFBC00A25CD9 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		7B89326F2627F60400A25CD9 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		7B90C0372604613A00241364 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7B90C03A2605AD6B00241364 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		7B90C03D260AF58A00241364 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -238,11 +242,12 @@
 		7B56AA8625FF230B0041DE7F /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				7B56AA9425FF23F80041DE7F /* UserListViewController.swift */,
 				7B92AA7B261EB8DE00018F8C /* Authentication */,
+				7B56AA9425FF23F80041DE7F /* UserListViewController.swift */,
 				7B56AA9D25FF242D0041DE7F /* SettingsViewController.swift */,
 				7B56AAA525FF24BA0041DE7F /* PostViewController.swift */,
 				7B90C03D260AF58A00241364 /* CommentsViewController.swift */,
+				7B89326F2627F60400A25CD9 /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
 				7B92AA7D261FF9C300018F8C /* AuthField.swift */,
 				7B92AA80261FF9E100018F8C /* AuthButton.swift */,
+				7B89326C2627EFBC00A25CD9 /* RecordButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				7B56AAA625FF24BA0041DE7F /* PostViewController.swift in Sources */,
 				7B92AA73261942E500018F8C /* ExplorePostCollectionViewCell.swift in Sources */,
 				7B56AA8C25FF23B40041DE7F /* CameraViewController.swift in Sources */,
+				7B8932702627F60400A25CD9 /* CaptionViewController.swift in Sources */,
 				7B92AA61261592CD00018F8C /* ExplorePostViewModel.swift in Sources */,
 				7B92AA582615701000018F8C /* ExploreCell.swift in Sources */,
 				7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */,
@@ -447,6 +454,7 @@
 				7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */,
 				7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */,
 				7B56AA9B25FF241F0041DE7F /* SignUpViewController.swift in Sources */,
+				7B89326D2627EFBC00A25CD9 /* RecordButton.swift in Sources */,
 				7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */,
 				7B56AA8F25FF23C60041DE7F /* NotificationsViewController.swift in Sources */,
 				7B90C041260D90DC00241364 /* PostComment.swift in Sources */,
