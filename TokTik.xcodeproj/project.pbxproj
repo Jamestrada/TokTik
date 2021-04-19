@@ -51,6 +51,7 @@
 		7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA7D261FF9C300018F8C /* AuthField.swift */; };
 		7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA80261FF9E100018F8C /* AuthButton.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
+		7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63AFB262D4FBE00C9A406 /* Notifications.swift */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +104,7 @@
 		7B92AA7D261FF9C300018F8C /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		7B92AA80261FF9E100018F8C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7BF63AFB262D4FBE00C9A406 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -199,6 +201,7 @@
 				7B92AA5426156FD900018F8C /* ExploreSection.swift */,
 				7B92AA572615701000018F8C /* ExploreCell.swift */,
 				7B92AA5A2615708600018F8C /* ExploreSectionType.swift */,
+				7BF63AFB262D4FBE00C9A406 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */,
 				7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */,
 				7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */,
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
