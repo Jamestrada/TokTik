@@ -52,6 +52,9 @@
 		7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B92AA80261FF9E100018F8C /* AuthButton.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63AFB262D4FBE00C9A406 /* Notifications.swift */; };
+		7BF63AFF262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63AFE262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift */; };
+		7BF63B06262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63B05262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift */; };
+		7BF63B09262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63B08262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift */; };
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +108,9 @@
 		7B92AA80261FF9E100018F8C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BF63AFB262D4FBE00C9A406 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7BF63AFE262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
+		7BF63B05262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostLikeTableViewCell.swift; sourceTree = "<group>"; };
+		7BF63B08262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPostCommentTableViewCell.swift; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -267,13 +273,10 @@
 			isa = PBXGroup;
 			children = (
 				7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */,
-				7B92AA6F261942D100018F8C /* ExploreBannerCollectionViewCell.swift */,
-				7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */,
-				7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */,
-				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
-				7B92AA7D261FF9C300018F8C /* AuthField.swift */,
-				7B92AA80261FF9E100018F8C /* AuthButton.swift */,
+				7BF63B03262E5D5600C9A406 /* Explore */,
+				7BF63B01262E5D4B00C9A406 /* Auth */,
 				7B89326C2627EFBC00A25CD9 /* RecordButton.swift */,
+				7BF63B0B262E5DEA00C9A406 /* Notifications */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -285,6 +288,36 @@
 				7B56AA9A25FF241F0041DE7F /* SignUpViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		7BF63B01262E5D4B00C9A406 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7B92AA7D261FF9C300018F8C /* AuthField.swift */,
+				7B92AA80261FF9E100018F8C /* AuthButton.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7BF63B03262E5D5600C9A406 /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				7B92AA6F261942D100018F8C /* ExploreBannerCollectionViewCell.swift */,
+				7B92AA72261942E500018F8C /* ExplorePostCollectionViewCell.swift */,
+				7B92AA75261942F800018F8C /* ExploreUserCollectionViewCell.swift */,
+				7B92AA782619430F00018F8C /* ExploreHashtagCollectionViewCell.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		7BF63B0B262E5DEA00C9A406 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				7BF63AFE262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift */,
+				7BF63B05262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift */,
+				7BF63B08262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		A2B4096C76E47EFB3E7FCF0A /* Pods */ = {
@@ -433,6 +466,7 @@
 				7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */,
 				7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */,
 				7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */,
+				7BF63B06262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift in Sources */,
 				7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */,
 				7B92AA792619430F00018F8C /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				7B90C0382604613A00241364 /* Extensions.swift in Sources */,
@@ -447,6 +481,7 @@
 				7B56AAA625FF24BA0041DE7F /* PostViewController.swift in Sources */,
 				7B92AA73261942E500018F8C /* ExplorePostCollectionViewCell.swift in Sources */,
 				7B56AA8C25FF23B40041DE7F /* CameraViewController.swift in Sources */,
+				7BF63AFF262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift in Sources */,
 				7B8932702627F60400A25CD9 /* CaptionViewController.swift in Sources */,
 				7B92AA61261592CD00018F8C /* ExplorePostViewModel.swift in Sources */,
 				7B92AA582615701000018F8C /* ExploreCell.swift in Sources */,
@@ -457,6 +492,7 @@
 				7B90C044260D911200241364 /* User.swift in Sources */,
 				7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */,
 				7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */,
+				7BF63B09262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				7B56AA9B25FF241F0041DE7F /* SignUpViewController.swift in Sources */,
 				7B89326D2627EFBC00A25CD9 /* RecordButton.swift in Sources */,
 				7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */,
