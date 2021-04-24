@@ -5,6 +5,7 @@
 //  Created by James Estrada on 4/23/21.
 //
 
+import SDWebImage
 import UIKit
 
 protocol ProfileHeaderCollectionReusableViewDelegate: AnyObject {
@@ -128,5 +129,23 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     func configure(with viewModel: ProfileHeaderViewModel) {
         self.viewModel = viewModel
         // Set up header
+        followersButton.setTitle("\(viewModel.followerCount)\nFollowers", for: .normal)
+        followingButton.setTitle("\(viewModel.followingCount)\nFollowing", for: .normal)
+        
+        if let avatarURL = viewModel.avatarImageURL {
+            avatarImageView.sd_setImage(with: avatarURL, completed: nil)
+        }
+        else {
+            avatarImageView.image = UIImage(named: "test")
+        }
+        
+        if let isFollowing = viewModel.isFollowing {
+            primaryButton.backgroundColor = isFollowing ? .secondarySystemBackground : .systemPink
+            primaryButton.setTitle(isFollowing ? "Unfollow" : "Follow", for: .normal)
+        }
+        else {
+            primaryButton.backgroundColor = .secondarySystemBackground
+            primaryButton.setTitle("Edit Profile", for: .normal)
+        }
     }
 }

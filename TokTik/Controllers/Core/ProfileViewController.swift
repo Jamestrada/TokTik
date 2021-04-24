@@ -106,6 +106,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             return UICollectionReusableView()
         }
         header.delegate = self
+        let viewModel = ProfileHeaderViewModel(avatarImageURL: nil, followerCount: 777, followingCount: 200, isFollowing: false)
+        header.configure(with: viewModel)
         return header
     }
     
