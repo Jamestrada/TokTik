@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0D9960263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */; };
+		7B0D996326337A2F00D20B11 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D996226337A2F00D20B11 /* ProfileHeaderViewModel.swift */; };
 		7B56AA6625FDDA780041DE7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AA6525FDDA780041DE7F /* AppDelegate.swift */; };
 		7B56AA6825FDDA780041DE7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AA6725FDDA780041DE7F /* SceneDelegate.swift */; };
 		7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AA6925FDDA780041DE7F /* HomeViewController.swift */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		0862250534222F6B8AB700E1 /* Pods-TokTik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTik.release.xcconfig"; path = "Target Support Files/Pods-TokTik/Pods-TokTik.release.xcconfig"; sourceTree = "<group>"; };
 		1737BD9A59B6CFC3A8C6CAA3 /* Pods-TokTik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTik.debug.xcconfig"; path = "Target Support Files/Pods-TokTik/Pods-TokTik.debug.xcconfig"; sourceTree = "<group>"; };
+		7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		7B0D996226337A2F00D20B11 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		7B56AA6225FDDA780041DE7F /* TokTik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokTik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B56AA6525FDDA780041DE7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B56AA6725FDDA780041DE7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				7B92AA60261592CD00018F8C /* ExplorePostViewModel.swift */,
 				7B92AA63261592F900018F8C /* ExploreHashtagViewModel.swift */,
 				7B92AA662615932300018F8C /* ExploreUserViewModel.swift */,
+				7B0D996226337A2F00D20B11 /* ProfileHeaderViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				7BF63B01262E5D4B00C9A406 /* Auth */,
 				7B89326C2627EFBC00A25CD9 /* RecordButton.swift */,
 				7BF63B0B262E5DEA00C9A406 /* Notifications */,
+				7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 				7B56AA8C25FF23B40041DE7F /* CameraViewController.swift in Sources */,
 				7BF63AFF262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift in Sources */,
 				7B8932702627F60400A25CD9 /* CaptionViewController.swift in Sources */,
+				7B0D996326337A2F00D20B11 /* ProfileHeaderViewModel.swift in Sources */,
 				7B92AA61261592CD00018F8C /* ExplorePostViewModel.swift in Sources */,
 				7B92AA582615701000018F8C /* ExploreCell.swift in Sources */,
 				7B90C03E260AF58A00241364 /* CommentsViewController.swift in Sources */,
@@ -491,6 +498,7 @@
 				7B56AAA125FF245F0041DE7F /* TabBarViewController.swift in Sources */,
 				7B90C044260D911200241364 /* User.swift in Sources */,
 				7B56AA6A25FDDA780041DE7F /* HomeViewController.swift in Sources */,
+				7B0D9960263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				7B92AA76261942F800018F8C /* ExploreUserCollectionViewCell.swift in Sources */,
 				7BF63B09262E5DC200C9A406 /* NotificationsPostCommentTableViewCell.swift in Sources */,
 				7B56AA9B25FF241F0041DE7F /* SignUpViewController.swift in Sources */,
