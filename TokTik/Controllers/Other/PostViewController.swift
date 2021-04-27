@@ -66,6 +66,21 @@ class PostViewController: UIViewController {
     
     private var playerDidFinishObserver: NSObjectProtocol?
     
+    private let videoView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black // while video loads
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.tintColor = .label
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        return spinner
+    }()
+    
     // MARK: - Init
     
     init(model: PostModel) {
@@ -79,10 +94,10 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(videoView)
+        videoView.addSubview(spinner)
         configureVideo()
-
-        let colors: [UIColor] = [.red, .green, .black, .orange, .blue, .systemPink]
-        view.backgroundColor = colors.randomElement()
+        view.backgroundColor = .black
         
         setUpButtons()
         setUpDoubleTapToLike()
@@ -93,6 +108,10 @@ class PostViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        videoView.frame = view.bounds
+        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        spinner.center = videoView.center
         
         let size: CGFloat = 40
         let yStart: CGFloat = view.height - (size * 4.0) - 30 - view.safeAreaInsets.bottom
@@ -112,20 +131,46 @@ class PostViewController: UIViewController {
     }
     
     private func configureVideo() {
-        guard let path = Bundle.main.path(forResource: "videoSample", ofType: "mp4") else {
-            return
+        StorageManager.shared.getDownloadURL(for: model) { [weak self] result in
+            DispatchQueue.main.async {
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                strongSelf.spinner.stopAnimating()
+                strongSelf.spinner.removeFromSuperview()
+                switch result {
+                case .success(let url):
+                    strongSelf.player = AVPlayer(url: url)
+                    
+                    // Add it as a subview to our posts
+                    let playerLayer = AVPlayerLayer(player: strongSelf.player)
+                    playerLayer.frame = strongSelf.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill // video takes entirety of frame
+                    strongSelf.videoView.layer.addSublayer(playerLayer)
+                    
+                    
+                    strongSelf.player?.volume = 0
+                    strongSelf.player?.play()
+                case .failure:
+                    guard let path = Bundle.main.path(forResource: "videoSample", ofType: "mp4") else {
+                        return
+                    }
+                    let url = URL(fileURLWithPath: path)
+                    
+                    strongSelf.player = AVPlayer(url: url)
+                    
+                    // Add it as a subview to our posts
+                    let playerLayer = AVPlayerLayer(player: strongSelf.player)
+                    playerLayer.frame = strongSelf.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill // video takes entirety of frame
+                    strongSelf.videoView.layer.addSublayer(playerLayer)
+                    
+                    strongSelf.player?.volume = 0
+                    strongSelf.player?.play()
+                }
+            }
         }
-        let url = URL(fileURLWithPath: path)
-        player = AVPlayer(url: url)
-        
-        // Add it as a subview to our posts
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill // video takes entirety of frame
-        view.layer.addSublayer(playerLayer)
-        
-        player?.volume = 0
-        player?.play()
         
         // Loop video after it ends
         guard let player = player else {
