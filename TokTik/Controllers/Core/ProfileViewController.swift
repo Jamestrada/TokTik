@@ -42,6 +42,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     private var followers = [String]()
     private var following = [String]()
+    private var isFollower: Bool = false
     
     // MARK: - Init
     
@@ -142,6 +143,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         let group = DispatchGroup()
         group.enter()
         group.enter()
+        group.enter()
         
         DatabaseManager.shared.getRelationships(for: user, type: .followers) { [weak self] followers in
             defer {
@@ -157,12 +159,19 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             self?.following = following
         }
         
+        DatabaseManager.shared.isValidRelationship(for: user, type: .followers) { [weak self] isFollower in
+            defer {
+                group.leave()
+            }
+            self?.isFollower = isFollower
+        }
+        
         group.notify(queue: .main) {
             let viewModel = ProfileHeaderViewModel(
                 avatarImageURL: self.user.profilePictureURL,
                 followerCount: self.followers.count,
                 followingCount: self.following.count,
-                isFollowing: self.isCurrentUserProfile ? nil : false
+                isFollowing: self.isCurrentUserProfile ? nil : self.isFollower
             )
             header.configure(with: viewModel)
         }
@@ -180,11 +189,42 @@ extension ProfileViewController: ProfileHeaderCollectionReusableViewDelegate {
         guard let currentUsername = UserDefaults.standard.string(forKey: "username") else {
             return
         }
-        if self.user.username == currentUsername {
+        if isCurrentUserProfile {
             // Edit Profile
+            let vc = EditProfileViewController()
+            let navVC = UINavigationController(rootViewController: vc)
+            present(navVC, animated: true)
         }
         else {
             // Follow or unfollow current users profile that we are viewing
+            if self.isFollower {
+                // unfollow
+                DatabaseManager.shared.updateRelationship(for: user, follow: false) { [weak self] success in
+                    if success {
+                        DispatchQueue.main.async {
+                            self?.isFollower = false
+                            self?.collectionView.reloadData()
+                        }
+                    }
+                    else {
+                        
+                    }
+                }
+            }
+            else {
+                // Follow
+                DatabaseManager.shared.updateRelationship(for: user, follow: true) { [weak self] success in
+                    if success {
+                        DispatchQueue.main.async {
+                            self?.isFollower = true
+                            self?.collectionView.reloadData()
+                        }
+                    }
+                    else {
+                        
+                    }
+                }
+            }
         }
     }
     

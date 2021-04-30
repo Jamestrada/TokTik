@@ -29,6 +29,7 @@
 		7B56AAB725FF257D0041DE7F /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */; };
 		7B56AABA25FF25AC0041DE7F /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */; };
 		7B6317802637D743008B2595 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63177F2637D743008B2595 /* PostCollectionViewCell.swift */; };
+		7B65F370263BBAE600948684 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B65F36F263BBAE600948684 /* EditProfileViewController.swift */; };
 		7B89326D2627EFBC00A25CD9 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89326C2627EFBC00A25CD9 /* RecordButton.swift */; };
 		7B8932702627F60400A25CD9 /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B89326F2627F60400A25CD9 /* CaptionViewController.swift */; };
 		7B90C0382604613A00241364 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90C0372604613A00241364 /* Extensions.swift */; };
@@ -88,6 +89,7 @@
 		7B56AAB625FF257D0041DE7F /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		7B56AAB925FF25AC0041DE7F /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		7B63177F2637D743008B2595 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B65F36F263BBAE600948684 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		7B89326C2627EFBC00A25CD9 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		7B89326F2627F60400A25CD9 /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
 		7B90C0372604613A00241364 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				7B56AAA525FF24BA0041DE7F /* PostViewController.swift */,
 				7B90C03D260AF58A00241364 /* CommentsViewController.swift */,
 				7B89326F2627F60400A25CD9 /* CaptionViewController.swift */,
+				7B65F36F263BBAE600948684 /* EditProfileViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			files = (
 				7B6317802637D743008B2595 /* PostCollectionViewCell.swift in Sources */,
 				7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */,
+				7B65F370263BBAE600948684 /* EditProfileViewController.swift in Sources */,
 				7B92AA81261FF9E100018F8C /* AuthButton.swift in Sources */,
 				7B92AA7E261FF9C300018F8C /* AuthField.swift in Sources */,
 				7BF63B06262E5D9100C9A406 /* NotificationsPostLikeTableViewCell.swift in Sources */,
