@@ -8,20 +8,11 @@
 import SafariServices
 import UIKit
 
-struct SettingsSection {
-    let title: String
-    let options: [SettingsOption]
-}
-
-struct SettingsOption {
-    let title: String
-    let handler: (() -> Void)
-}
-
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
         return table
     }()
     
@@ -31,6 +22,12 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         sections = [
+            SettingsSection(
+                title: "Preferences",
+                options: [
+                    SettingsOption(title: "Save Videos", handler: { })
+                ]
+            ),
             SettingsSection(
                 title: "Information",
                 options: [
@@ -121,6 +118,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = sections[indexPath.section].options[indexPath.row]
+        
+        if model.title == "Save Videos" {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier, for: indexPath) as? SwitchTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.delegate = self
+            cell.configure(with: SwitchCellViewModel(title: model.title, isOn: UserDefaults.standard.bool(forKey: "save_video")))
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = model.title
@@ -135,5 +142,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
+    }
+}
+
+extension SettingsViewController: SwitchTableViewCellDelegate {
+    func switchTableViewCell(_ cell: SwitchTableViewCell, didUpdateSwitchTo isOn: Bool) {
+        print(isOn)
+        
+        UserDefaults.standard.setValue(isOn, forKey: "save_video")
     }
 }
