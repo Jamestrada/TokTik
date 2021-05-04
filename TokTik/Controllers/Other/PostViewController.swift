@@ -228,6 +228,7 @@ class PostViewController: UIViewController {
         if !model.isLikedByCurrentUser {
             model.isLikedByCurrentUser = true
         }
+        HapticsManager.shared.vibrateForSelection()
         
         // show animation when double tap occurs
         let touchPoint = gesture.location(in: view)

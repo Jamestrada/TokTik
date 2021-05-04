@@ -112,9 +112,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 switch result {
                 case .success:
                     // success
+                    HapticsManager.shared.vibrate(for: .success)
                     self?.dismiss(animated: true, completion: nil)
-                case .failure(let error):
-                    print(error)
+                case .failure:
+                    HapticsManager.shared.vibrate(for: .error)
                     let alert = UIAlertController(title: "Sign In Failed", message: "Please check your email and password to try again.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                     self?.present(alert, animated: true)

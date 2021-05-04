@@ -177,6 +177,7 @@ extension NotificationsViewController: NotificationsUserFollowTableViewCellDeleg
     }
     
     func notificationsUserFollowTableViewCell(_ cell: NotificationsUserFollowTableViewCell, didTapAvatarFor username: String) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = ProfileViewController(user: User(username: username, profilePictureURL: nil, identifier: "123"))
         vc.title = username.uppercased()
         navigationController?.pushViewController(vc, animated: true)
@@ -197,6 +198,7 @@ extension NotificationsViewController: NotificationsPostCommentTableViewCellDele
 
 extension NotificationsViewController {
     func openPost(with identifier: String) {
+        HapticsManager.shared.vibrateForSelection()
         let vc = PostViewController(model: PostModel(identifier: identifier, user: User(username: "kanyewest", profilePictureURL: nil, identifier: UUID().uuidString)))
         vc.title = "Video"
         navigationController?.pushViewController(vc, animated: true)

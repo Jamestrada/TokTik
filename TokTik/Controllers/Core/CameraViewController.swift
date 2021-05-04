@@ -64,11 +64,14 @@ class CameraViewController: UIViewController {
             // stop recording
             recordButton.toggle(for: .notRecording)
             captureOutput.stopRecording()
+            HapticsManager.shared.vibrateForSelection()
         }
         else {
             guard var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 return
             }
+            HapticsManager.shared.vibrateForSelection()
+            
             url.appendPathComponent("video.mov")
             
             recordButton.toggle(for: .recording)
@@ -164,6 +167,8 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
         guard let url = recordedVideoURL else {
             return
         }
+        HapticsManager.shared.vibrateForSelection()
+        
         // Push caption controller
         let vc = CaptionViewController(videoURL: url)
         navigationController?.pushViewController(vc, animated: true)
