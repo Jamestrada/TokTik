@@ -24,6 +24,8 @@ struct PostModel {
         return posts
     }
     
+    
+    /// Represents database child path for this post in a given user node
     var videoChildPath: String {
         return "videos/\(user.username.lowercased())/\(fileName)"
     }
