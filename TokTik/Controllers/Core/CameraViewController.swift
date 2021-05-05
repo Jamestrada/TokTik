@@ -9,32 +9,32 @@ import AVFoundation
 import UIKit
 
 class CameraViewController: UIViewController {
-    
+
     // Capture Session
     var captureSession = AVCaptureSession()
-    
+
     // Capture Device
     var videoCaptureDevice: AVCaptureDevice?
-    
+
     // Capture Output
     var captureOutput = AVCaptureMovieFileOutput()
-    
+
     // Capture Preview
     var capturePreviewLayer: AVCaptureVideoPreviewLayer?
-    
+
     private let cameraView: UIView = {
         let view = UIView()
         view.clipsToBounds = true
         view.backgroundColor = .black
         return view
     }()
-    
+
     private let recordButton = RecordButton()
-    
+
     private var previewLayer: AVPlayerLayer?
-    
+
     var recordedVideoURL: URL?
-    
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -46,42 +46,41 @@ class CameraViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didTapClose))
         recordButton.addTarget(self, action: #selector(didTapRecord), for: .touchUpInside)
     }
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         cameraView.frame = view.bounds
         let size: CGFloat = 80
         recordButton.frame = CGRect(x: (view.width - size) / 2, y: view.height - view.safeAreaInsets.bottom - size - 5, width: size, height: size)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabBarController?.tabBar.isHidden = true
     }
-    
+
     @objc private func didTapRecord() {
         if captureOutput.isRecording {
             // stop recording
             recordButton.toggle(for: .notRecording)
             captureOutput.stopRecording()
             HapticsManager.shared.vibrateForSelection()
-        }
-        else {
+        } else {
             guard var url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
                 return
             }
             HapticsManager.shared.vibrateForSelection()
-            
+
             url.appendPathComponent("video.mov")
-            
+
             recordButton.toggle(for: .recording)
-            
+
             try? FileManager.default.removeItem(at: url)
-            
+
             captureOutput.startRecording(to: url, recordingDelegate: self)
         }
     }
-    
+
     @objc private func didTapClose() {
         navigationItem.rightBarButtonItem = nil
         recordButton.isHidden = false
@@ -89,8 +88,7 @@ class CameraViewController: UIViewController {
             // Reset camera
             previewLayer?.removeFromSuperlayer()
             previewLayer = nil
-        }
-        else {
+        } else {
             captureSession.stopRunning()
             tabBarController?.tabBar.isHidden = false
             tabBarController?.selectedIndex = 0
@@ -107,7 +105,7 @@ class CameraViewController: UIViewController {
                 }
             }
         }
-        
+
         if let videoDevice = AVCaptureDevice.default(for: .video) {
             if let videoInput = try? AVCaptureDeviceInput(device: videoDevice) {
                 if captureSession.canAddInput(videoInput) {
@@ -115,13 +113,13 @@ class CameraViewController: UIViewController {
                 }
             }
         }
-        
+
         // Update session
         captureSession.sessionPreset = .hd1280x720
         if captureSession.canAddOutput(captureOutput) {
             captureSession.addOutput(captureOutput)
         }
-        
+
         // Configure preview
         capturePreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         capturePreviewLayer?.videoGravity = .resizeAspectFill
@@ -129,7 +127,7 @@ class CameraViewController: UIViewController {
         if let layer = capturePreviewLayer {
             cameraView.layer.addSublayer(layer)
         }
-        
+
         // Enable camera start
         captureSession.startRunning()
     }
@@ -144,13 +142,13 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
             return
         }
         recordedVideoURL = outputFileURL
-        
+
         if UserDefaults.standard.bool(forKey: "save_video") {
             UISaveVideoAtPathToSavedPhotosAlbum(outputFileURL.path, nil, nil, nil)
         }
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .done, target: self, action: #selector(didTapNext))
-        
+
         let player = AVPlayer(url: outputFileURL)
         previewLayer = AVPlayerLayer(player: player)
         previewLayer?.videoGravity = .resizeAspectFill
@@ -162,13 +160,13 @@ extension CameraViewController: AVCaptureFileOutputRecordingDelegate {
         cameraView.layer.addSublayer(previewLayer)
         previewLayer.player?.play()
     }
-    
+
     @objc func didTapNext() {
         guard let url = recordedVideoURL else {
             return
         }
         HapticsManager.shared.vibrateForSelection()
-        
+
         // Push caption controller
         let vc = CaptionViewController(videoURL: url)
         navigationController?.pushViewController(vc, animated: true)

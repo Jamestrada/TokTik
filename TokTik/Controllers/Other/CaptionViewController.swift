@@ -7,11 +7,12 @@
 
 import UIKit
 import ProgressHUD
+import Appirater
 
 class CaptionViewController: UIViewController {
-    
+
     let videoURL: URL
-    
+
     private let captionTextView: UITextView = {
         let textView = UITextView()
         textView.contentInset = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
@@ -20,14 +21,14 @@ class CaptionViewController: UIViewController {
         textView.layer.masksToBounds = true
         return textView
     }()
-    
+
     // MARK: - Init
-    
+
     init(videoURL: URL) {
         self.videoURL = videoURL
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
@@ -44,20 +45,20 @@ class CaptionViewController: UIViewController {
         super.viewDidLayoutSubviews()
         captionTextView.frame = CGRect(x: 5, y: view.safeAreaInsets.top + 5, width: view.width - 10, height: 150).integral
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         captionTextView.becomeFirstResponder()
     }
-    
+
     @objc private func didTapPost() {
         captionTextView.resignFirstResponder()
         let caption = captionTextView.text ?? ""
         // Generate a video name that is unique based on id
         let newVideoName = StorageManager.shared.generateVideoName()
-        
+
         ProgressHUD.show("Posting")
-        
+
         // Upload video
         StorageManager.shared.uploadVideo(from: videoURL, filename: newVideoName) { [weak self] success in
             DispatchQueue.main.async {
@@ -65,14 +66,14 @@ class CaptionViewController: UIViewController {
                     // Update database
                     DatabaseManager.shared.insertPost(filename: newVideoName, caption: caption) { databaseUpdated in
                         if databaseUpdated {
+                            Appirater.tryToShowPrompt()
                             HapticsManager.shared.vibrate(for: .success)
                             ProgressHUD.dismiss()
                             // Reset camera and switch to feed
                             self?.navigationController?.popToRootViewController(animated: true)
                             self?.tabBarController?.selectedIndex = 0
                             self?.tabBarController?.tabBar.isHidden = false
-                        }
-                        else {
+                        } else {
                             HapticsManager.shared.vibrate(for: .error)
                             ProgressHUD.dismiss()
                             let alert = UIAlertController(title: "Woops", message: "We were unable to upload your video. Please try again.", preferredStyle: .alert)
@@ -80,8 +81,7 @@ class CaptionViewController: UIViewController {
                             self?.present(alert, animated: true)
                         }
                     }
-                }
-                else {
+                } else {
                     HapticsManager.shared.vibrate(for: .error)
                     ProgressHUD.dismiss()
                     let alert = UIAlertController(title: "Woops", message: "We were unable to upload your video. Please try again.", preferredStyle: .alert)
@@ -90,6 +90,6 @@ class CaptionViewController: UIViewController {
                 }
             }
         }
-        
+
     }
 }

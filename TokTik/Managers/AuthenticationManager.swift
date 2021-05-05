@@ -12,12 +12,12 @@ import FirebaseAuth
 final class AuthManager {
     /// Singleton instance of the manager
     public static let shared = AuthManager()
-    
+
     /// Private contructor
-    private init() {  //shared has to be used
-        
+    private init() {  // shared has to be used
+
     }
-    
+
     /// Represents method to sign in
     enum SignInMethod {
         /// Email and password method
@@ -27,19 +27,19 @@ final class AuthManager {
         /// Google method
         case google
     }
-    
+
     /// Represents errors that can occur in auth flows
     enum AuthError: Error {
         case signInFailed
     }
-    
+
     // Public
-    
+
     /// Represents if user is signed in
     public var isSignedIn: Bool {
         return Auth.auth().currentUser != nil
     }
-    
+
     /// Attempt to sign in
     /// - Parameters:
     ///   - email: User email
@@ -50,25 +50,24 @@ final class AuthManager {
             guard result != nil, error == nil else {
                 if let error = error {
                     completion(.failure(error))
-                }
-                else {
+                } else {
                     completion(.failure(AuthError.signInFailed))
                 }
                 return
             }
-            
+
             DatabaseManager.shared.getUsername(for: email) { username in
                 if let username = username {
                     UserDefaults.standard.setValue(username, forKey: "username")
                     print("Got username: \(username)")
                 }
             }
-            
+
             // Successful sign in
             completion(.success(email))
         }
     }
-    
+
     /// Attempt to sign up
     /// - Parameters:
     ///   - username: Desired username
@@ -77,26 +76,25 @@ final class AuthManager {
     ///   - completion: Async result callback
     public func signUp(with username: String, emailAddress: String, password: String, completion: @escaping (Bool) -> Void) {
         // Make sure entered username is available
-        
+
         Auth.auth().createUser(withEmail: emailAddress, password: password) { result, error in
             guard result != nil, error == nil else {
                 completion(false)
                 return
             }
             UserDefaults.standard.setValue(username, forKey: "username")
-            
+
             DatabaseManager.shared.insertUser(with: emailAddress, username: username, completion: completion)
         }
     }
-    
+
     /// Attempt to sign out
     /// - Parameter completion: Async callback of sign out result
     public func signOut(completion: (Bool) -> Void) {
         do {
             try Auth.auth().signOut()
             completion(true)
-        }
-        catch {
+        } catch {
             print(error)
             completion(false)
         }

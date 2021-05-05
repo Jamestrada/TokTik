@@ -12,17 +12,17 @@ import FirebaseStorage
 final class StorageManager {
     /// Shared singleton instance
     public static let shared = StorageManager()
-    
+
     /// Storage bucket reference
     private let storageBucket = Storage.storage().reference()
-    
+
     /// Private constructor
-    private init() {  //shared has to be used
-        
+    private init() {  // shared has to be used
+
     }
-    
+
     // Public
-    
+
     /// Upload a new user video to firebase
     /// - Parameters:
     ///   - url: Local file url to video
@@ -36,12 +36,12 @@ final class StorageManager {
             completion(error == nil)
         }
     }
-    
+
     /// Upload new profile picture
     /// - Parameters:
     ///   - image: New image to upload
     ///   - completion: Async callback of result
-    public func uploadProfilePicture(with image:UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+    public func uploadProfilePicture(with image: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
         guard let username = UserDefaults.standard.string(forKey: "username") else {
             return
         }
@@ -49,12 +49,11 @@ final class StorageManager {
             return
         }
         let path = "profile_picture/\(username)/picture.png"
-        
+
         storageBucket.child(path).putData(imageData, metadata: nil) { _, error in
             if let error = error {
                 completion(.failure(error))
-            }
-            else {
+            } else {
                 self.storageBucket.child(path).downloadURL { url, error in
                     guard let url = url else {
                         if let error = error {
@@ -67,17 +66,17 @@ final class StorageManager {
             }
         }
     }
-    
+
     /// Generates a new file name
     /// - Returns: Return a unique generated file name
     public func generateVideoName() -> String {
         let uuidString = UUID().uuidString
         let number = Int.random(in: 0...1000)
         let unixTimestamp = Date().timeIntervalSince1970
-        
+
         return uuidString + "_\(number)_" + "\(unixTimestamp)" + ".mov"
     }
-    
+
     /// Get download url of video post
     /// - Parameters:
     ///   - post: Post model to get url for
@@ -86,8 +85,7 @@ final class StorageManager {
         storageBucket.child(post.videoChildPath).downloadURL { url, error in
             if let error = error {
                 completion(.failure(error))
-            }
-            else if let url = url {
+            } else if let url = url {
                 completion(.success(url))
             }
         }

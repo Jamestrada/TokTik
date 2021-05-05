@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Appirater
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,18 +15,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        Appirater.appLaunched(true)
+        Appirater.setDebug(false)
+        Appirater.setAppId("appstore id")
+        Appirater.setDaysUntilPrompt(7)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = TabBarViewController()
         self.window = window
         self.window?.makeKeyAndVisible()
-        
+
         FirebaseApp.configure()
-        
+
 //        AuthManager.shared.signOut { _ in
 //
 //        }
-        
+
         return true
     }
 
@@ -43,6 +49,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

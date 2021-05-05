@@ -14,32 +14,32 @@ protocol NotificationsUserFollowTableViewCellDelegate: AnyObject {
 
 class NotificationsUserFollowTableViewCell: UITableViewCell {
     static let identifier = "NotificationsUserFollowTableViewCell"
-    
+
     weak var delegate: NotificationsUserFollowTableViewCellDelegate?
-    
+
     // avatar, label, follow button
-    
+
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    
+
     private let label: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = .label
         return label
     }()
-    
+
     private let dateLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = .secondaryLabel
         return label
     }()
-    
+
     private let followButton: UIButton = {
         let button = UIButton()
         button.setTitle("Follow", for: .normal)
@@ -49,9 +49,9 @@ class NotificationsUserFollowTableViewCell: UITableViewCell {
         button.layer.masksToBounds = true
         return button
     }()
-    
+
     var username: String?
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.clipsToBounds = true
@@ -65,7 +65,7 @@ class NotificationsUserFollowTableViewCell: UITableViewCell {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapAvatar))
         avatarImageView.addGestureRecognizer(tap)
     }
-    
+
     @objc func didTapFollow() {
         guard let username = username else {
             return
@@ -74,40 +74,40 @@ class NotificationsUserFollowTableViewCell: UITableViewCell {
         followButton.backgroundColor = .clear
         followButton.layer.borderWidth = 1
         followButton.layer.borderColor = UIColor.lightGray.cgColor
-        
+
         delegate?.notificationsUserFollowTableViewCell(self, didTapFollowFor: username)
     }
-    
+
     @objc func didTapAvatar() {
         guard let username = username else {
             return
         }
         delegate?.notificationsUserFollowTableViewCell(self, didTapAvatarFor: username)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         let iconSize: CGFloat = 50
         avatarImageView.frame = CGRect(x: 10, y: 3, width: iconSize, height: iconSize)
         avatarImageView.layer.cornerRadius = 25
         avatarImageView.layer.masksToBounds = true
-        
+
         followButton.sizeToFit()
         followButton.frame = CGRect(x: contentView.width - 110, y: 15, width: 90, height: 30)
-        
+
         let labelSize = label.sizeThatFits(CGSize(width: contentView.width - 30 - followButton.width - iconSize, height: contentView.height - 40))
         label.sizeToFit()
         label.frame = CGRect(x: avatarImageView.right + 10, y: 3, width: labelSize.width, height: labelSize.height)
-        
+
         dateLabel.sizeToFit()
         dateLabel.frame = CGRect(x: avatarImageView.right + 10, y: label.bottom + 3, width: contentView.width - avatarImageView.width - followButton.width, height: 40)
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         avatarImageView.image = nil
@@ -118,7 +118,7 @@ class NotificationsUserFollowTableViewCell: UITableViewCell {
         followButton.layer.borderWidth = 0
         followButton.layer.borderColor = nil
     }
-    
+
     func configure(with username: String, model: Notification) {
         self.username = username
         avatarImageView.image = UIImage(named: "test")

@@ -22,10 +22,10 @@ protocol ExploreManagerDelegate: AnyObject {
 final class ExploreManager {
     /// Shared singleton instance
     static let shared = ExploreManager()
-    
+
     /// Delegate to notify of events
     weak var delegate: ExploreManagerDelegate?
-    
+
     /// Represents banner action type
     enum BannerAction: String {
         /// Post type
@@ -35,9 +35,9 @@ final class ExploreManager {
         /// Creator type
         case user
     }
-    
+
     // MARK: - Public
-    
+
     /// Gets explore data for banner
     /// - Returns: Return collection of models
     public func getExploreBanners() -> [ExploreBannerViewModel] {
@@ -69,7 +69,7 @@ final class ExploreManager {
             })
         })
     }
-    
+
     /// Gets explore data for popular creators
     /// - Returns: Return collection of models
     public func getExploreCreators() -> [ExploreUserViewModel] {
@@ -87,7 +87,7 @@ final class ExploreManager {
             })
         })
     }
-    
+
     /// Gets explore data for hashtags
     /// - Returns: Return collection of models
     public func getExploreHashtags() -> [ExploreHashtagViewModel] {
@@ -102,7 +102,7 @@ final class ExploreManager {
             }
         })
     }
-    
+
     /// Gets explore data for trending posts
     /// - Returns: Return collection of models
     public func getExploreTrendingPosts() -> [ExplorePostViewModel] {
@@ -120,7 +120,7 @@ final class ExploreManager {
             }
         })
     }
-    
+
     /// Gets explore data for recent posts
     /// - Returns: Return collection of models
     public func getExploreRecentPosts() -> [ExplorePostViewModel] {
@@ -138,7 +138,7 @@ final class ExploreManager {
             }
         })
     }
-    
+
     /// Gets explore data for popular posts
     /// - Returns: Return collection of models
     public func getExplorePopularPosts() -> [ExplorePostViewModel] {
@@ -156,9 +156,9 @@ final class ExploreManager {
             }
         })
     }
-    
+
     // MARK: - Private
-    
+
     /// Pase explore JSON data
     /// - Returns: Returns an optional response model
     private func parseExploreData() -> ExploreResponse? {
@@ -169,46 +169,9 @@ final class ExploreManager {
             let url = URL(fileURLWithPath: path)
             let data = try Data(contentsOf: url)
             return try JSONDecoder().decode(ExploreResponse.self, from: data)
-        }
-        catch {
+        } catch {
             print(error)
             return nil
         }
     }
-}
-
-struct ExploreResponse: Codable {
-    let banners: [Banner]
-    let trendingPosts: [Post]
-    let creators: [Creator]
-    let recentPosts: [Post]
-    let hashtags: [Hashtag]
-    let popular: [Post]
-    let recommended: [Post]
-}
-
-struct Banner: Codable {
-    let id: String
-    let image: String
-    let title: String
-    let action: String
-}
-
-struct Post: Codable {
-    let id: String
-    let image: String
-    let caption: String
-}
-
-struct Hashtag: Codable {
-    let image: String
-    let tag: String
-    let count: Int
-}
-
-struct Creator: Codable {
-    let id: String
-    let image: String
-    let username: String
-    let followers_count: Int
 }

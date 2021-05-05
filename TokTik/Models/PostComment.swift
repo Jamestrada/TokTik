@@ -11,7 +11,7 @@ struct PostComment {
     let text: String
     let user: User
     let date: Date
-    
+
     static func mockComments() -> [PostComment] {
         let user = User(username: "kanyewest", profilePictureURL: nil, identifier: UUID().uuidString)
         var comments = [PostComment]()

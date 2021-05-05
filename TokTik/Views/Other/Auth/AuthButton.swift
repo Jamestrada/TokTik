@@ -13,7 +13,7 @@ class AuthButton: UIButton {
         case signIn
         case signUp
         case plain
-        
+
         var title: String {
             switch self {
             case .signIn:
@@ -25,9 +25,9 @@ class AuthButton: UIButton {
             }
         }
     }
-    
+
     let type: ButtonType
-    
+
     init(type: ButtonType, title: String?) {
         self.type = type
         super.init(frame: .zero)
@@ -36,11 +36,11 @@ class AuthButton: UIButton {
         }
         configureUI()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
+
     private func configureUI() {
         if type != .plain {
             setTitle(type.title, for: .normal)

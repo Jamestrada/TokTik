@@ -14,4 +14,3 @@ struct ExploreUserViewModel {
     let followerCount: Int
     let handler: (() -> Void)
 }
-
