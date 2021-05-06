@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F8FE0A430DBF027525804B3 /* Pods_TokTikTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF7DC7058D987CB98D147F38 /* Pods_TokTikTests.framework */; };
 		7B0D9960263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */; };
 		7B0D996326337A2F00D20B11 /* ProfileHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D996226337A2F00D20B11 /* ProfileHeaderViewModel.swift */; };
 		7B56AA6625FDDA780041DE7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B56AA6525FDDA780041DE7F /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 		7BA966042643667C0022811E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA966032643667C0022811E /* Post.swift */; };
 		7BA966062643669C0022811E /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA966052643669C0022811E /* Hashtag.swift */; };
 		7BA96608264366BC0022811E /* Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA96607264366BC0022811E /* Creator.swift */; };
+		7BA966102644A6CF0022811E /* TokTikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA9660F2644A6CF0022811E /* TokTikTests.swift */; };
 		7BF0568225FF3D50003C60F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */; };
 		7BF63AFC262D4FBE00C9A406 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63AFB262D4FBE00C9A406 /* Notifications.swift */; };
 		7BF63AFF262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF63AFE262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift */; };
@@ -71,9 +73,20 @@
 		B6FC9E8E016C402F58F4BAC3 /* Pods_TokTik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7BA966122644A6CF0022811E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7B56AA5A25FDDA780041DE7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7B56AA6125FDDA780041DE7F;
+			remoteInfo = TokTik;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0862250534222F6B8AB700E1 /* Pods-TokTik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTik.release.xcconfig"; path = "Target Support Files/Pods-TokTik/Pods-TokTik.release.xcconfig"; sourceTree = "<group>"; };
 		1737BD9A59B6CFC3A8C6CAA3 /* Pods-TokTik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTik.debug.xcconfig"; path = "Target Support Files/Pods-TokTik/Pods-TokTik.debug.xcconfig"; sourceTree = "<group>"; };
+		3307CEF934194CBDC0B26AC4 /* Pods-TokTikTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTikTests.release.xcconfig"; path = "Target Support Files/Pods-TokTikTests/Pods-TokTikTests.release.xcconfig"; sourceTree = "<group>"; };
 		7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		7B0D996226337A2F00D20B11 /* ProfileHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderViewModel.swift; sourceTree = "<group>"; };
 		7B56AA6225FDDA780041DE7F /* TokTik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TokTik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +141,9 @@
 		7BA966032643667C0022811E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7BA966052643669C0022811E /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
 		7BA96607264366BC0022811E /* Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creator.swift; sourceTree = "<group>"; };
+		7BA9660D2644A6CE0022811E /* TokTikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TokTikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BA9660F2644A6CF0022811E /* TokTikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokTikTests.swift; sourceTree = "<group>"; };
+		7BA966112644A6CF0022811E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BF0568125FF3D50003C60F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7BF63AFB262D4FBE00C9A406 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7BF63AFE262E5CBC00C9A406 /* NotificationsUserFollowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsUserFollowTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +154,8 @@
 		7BFBC7C3263FC1D5003FE454 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		7BFBC7C5263FC1FB003FE454 /* SettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOption.swift; sourceTree = "<group>"; };
 		A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71534B44CB3379408CABF67 /* Pods-TokTikTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TokTikTests.debug.xcconfig"; path = "Target Support Files/Pods-TokTikTests/Pods-TokTikTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF7DC7058D987CB98D147F38 /* Pods_TokTikTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TokTikTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +167,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BA9660A2644A6CE0022811E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F8FE0A430DBF027525804B3 /* Pods_TokTikTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -156,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A1E3798B5F0ADCBE8D269BDF /* Pods_TokTik.framework */,
+				AF7DC7058D987CB98D147F38 /* Pods_TokTikTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				7B56AA6425FDDA780041DE7F /* TokTik */,
+				7BA9660E2644A6CF0022811E /* TokTikTests */,
 				7B56AA6325FDDA780041DE7F /* Products */,
 				A2B4096C76E47EFB3E7FCF0A /* Pods */,
 				03B29B8ADBE2C3F9BDEE5476 /* Frameworks */,
@@ -174,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				7B56AA6225FDDA780041DE7F /* TokTik.app */,
+				7BA9660D2644A6CE0022811E /* TokTikTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,17 +259,10 @@
 				7B90C03A2605AD6B00241364 /* PostModel.swift */,
 				7B90C040260D90DC00241364 /* PostComment.swift */,
 				7B90C043260D911200241364 /* User.swift */,
-				7B92AA5426156FD900018F8C /* ExploreSection.swift */,
-				7B92AA572615701000018F8C /* ExploreCell.swift */,
-				7B92AA5A2615708600018F8C /* ExploreSectionType.swift */,
 				7BF63AFB262D4FBE00C9A406 /* Notifications.swift */,
 				7BFBC7C3263FC1D5003FE454 /* SettingsSection.swift */,
 				7BFBC7C5263FC1FB003FE454 /* SettingsOption.swift */,
-				7BA965FF264366120022811E /* ExploreResponse.swift */,
-				7BA96601264366530022811E /* Banner.swift */,
-				7BA966032643667C0022811E /* Post.swift */,
-				7BA966052643669C0022811E /* Hashtag.swift */,
-				7BA96607264366BC0022811E /* Creator.swift */,
+				7BA966172644B2D10022811E /* Explore */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -308,11 +330,11 @@
 		7B56AAA425FF248D0041DE7F /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */,
+				7BF63B0B262E5DEA00C9A406 /* Notifications */,
 				7BF63B03262E5D5600C9A406 /* Explore */,
 				7BF63B01262E5D4B00C9A406 /* Auth */,
+				7B90C046260ECB7C00241364 /* CommentTableViewCell.swift */,
 				7B89326C2627EFBC00A25CD9 /* RecordButton.swift */,
-				7BF63B0B262E5DEA00C9A406 /* Notifications */,
 				7B0D995F263372D900D20B11 /* ProfileHeaderCollectionReusableView.swift */,
 				7B63177F2637D743008B2595 /* PostCollectionViewCell.swift */,
 				7BFBC7BF263F7A75003FE454 /* SwitchTableViewCell.swift */,
@@ -327,6 +349,30 @@
 				7B56AA9A25FF241F0041DE7F /* SignUpViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		7BA9660E2644A6CF0022811E /* TokTikTests */ = {
+			isa = PBXGroup;
+			children = (
+				7BA9660F2644A6CF0022811E /* TokTikTests.swift */,
+				7BA966112644A6CF0022811E /* Info.plist */,
+			);
+			path = TokTikTests;
+			sourceTree = "<group>";
+		};
+		7BA966172644B2D10022811E /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				7B92AA572615701000018F8C /* ExploreCell.swift */,
+				7B92AA5426156FD900018F8C /* ExploreSection.swift */,
+				7B92AA5A2615708600018F8C /* ExploreSectionType.swift */,
+				7BA965FF264366120022811E /* ExploreResponse.swift */,
+				7BA96601264366530022811E /* Banner.swift */,
+				7BA966032643667C0022811E /* Post.swift */,
+				7BA966052643669C0022811E /* Hashtag.swift */,
+				7BA96607264366BC0022811E /* Creator.swift */,
+			);
+			path = Explore;
 			sourceTree = "<group>";
 		};
 		7BF63B01262E5D4B00C9A406 /* Auth */ = {
@@ -364,6 +410,8 @@
 			children = (
 				1737BD9A59B6CFC3A8C6CAA3 /* Pods-TokTik.debug.xcconfig */,
 				0862250534222F6B8AB700E1 /* Pods-TokTik.release.xcconfig */,
+				A71534B44CB3379408CABF67 /* Pods-TokTikTests.debug.xcconfig */,
+				3307CEF934194CBDC0B26AC4 /* Pods-TokTikTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -391,17 +439,41 @@
 			productReference = 7B56AA6225FDDA780041DE7F /* TokTik.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7BA9660C2644A6CE0022811E /* TokTikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BA966142644A6CF0022811E /* Build configuration list for PBXNativeTarget "TokTikTests" */;
+			buildPhases = (
+				119E6CA4195FE5A39748BF1E /* [CP] Check Pods Manifest.lock */,
+				7BA966092644A6CE0022811E /* Sources */,
+				7BA9660A2644A6CE0022811E /* Frameworks */,
+				7BA9660B2644A6CE0022811E /* Resources */,
+				657EA64B2760EFDC920D9533 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BA966132644A6CF0022811E /* PBXTargetDependency */,
+			);
+			name = TokTikTests;
+			productName = TokTikTests;
+			productReference = 7BA9660D2644A6CE0022811E /* TokTikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7B56AA5A25FDDA780041DE7F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					7B56AA6125FDDA780041DE7F = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					7BA9660C2644A6CE0022811E = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 7B56AA6125FDDA780041DE7F;
 					};
 				};
 			};
@@ -419,6 +491,7 @@
 			projectRoot = "";
 			targets = (
 				7B56AA6125FDDA780041DE7F /* TokTik */,
+				7BA9660C2644A6CE0022811E /* TokTikTests */,
 			);
 		};
 /* End PBXProject section */
@@ -436,9 +509,55 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BA9660B2644A6CE0022811E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		119E6CA4195FE5A39748BF1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TokTikTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		657EA64B2760EFDC920D9533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokTikTests/Pods-TokTikTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TokTikTests/Pods-TokTikTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TokTikTests/Pods-TokTikTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7BF0568425FF4062003C60F6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,7 +680,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7BA966092644A6CE0022811E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BA966102644A6CF0022811E /* TokTikTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7BA966132644A6CF0022811E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7B56AA6125FDDA780041DE7F /* TokTik */;
+			targetProxy = 7BA966122644A6CF0022811E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7B56AA7025FDDA780041DE7F /* LaunchScreen.storyboard */ = {
@@ -733,6 +868,48 @@
 			};
 			name = Release;
 		};
+		7BA966152644A6CF0022811E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71534B44CB3379408CABF67 /* Pods-TokTikTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8C6N42M8X3;
+				INFOPLIST_FILE = TokTikTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamestrada.TokTikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TokTik.app/TokTik";
+			};
+			name = Debug;
+		};
+		7BA966162644A6CF0022811E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3307CEF934194CBDC0B26AC4 /* Pods-TokTikTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8C6N42M8X3;
+				INFOPLIST_FILE = TokTikTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jamestrada.TokTikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TokTik.app/TokTik";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -750,6 +927,15 @@
 			buildConfigurations = (
 				7B56AA7725FDDA780041DE7F /* Debug */,
 				7B56AA7825FDDA780041DE7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BA966142644A6CF0022811E /* Build configuration list for PBXNativeTarget "TokTikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BA966152644A6CF0022811E /* Debug */,
+				7BA966162644A6CF0022811E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
